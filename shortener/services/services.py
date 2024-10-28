@@ -2,6 +2,8 @@ import hashlib
 import base64
 import re
 from typing import Optional
+
+from ..exceptions.exceptions import InvalidShortCodeError
 from ..repositories.repositories import URLRepository
 
 class URLService:
@@ -54,9 +56,11 @@ class URLService:
             return False
 
     def get_original_url(self, short_code: str) -> Optional[str]:
-    
         if not self.is_valid_short_code(short_code):
-            return None
-            
+            raise InvalidShortCodeError('The provided short code was not generated before')
+        
         url_obj = URLRepository.get_by_short_code(short_code)
-        return url_obj.original_url if url_obj else None
+        if not url_obj:
+            raise InvalidShortCodeError('URL not found for the provided short code')
+            
+        return url_obj.original_url
