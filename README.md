@@ -2,7 +2,7 @@
 
 A Django URL shortener API that creates short URLs with a specific signature format.
 
-## Architecture
+## Architecture / Implementation Decisions
 
 1. *Layered Architecture*:
    - Repository Layer: Handles data persistence and retrieval
@@ -39,8 +39,8 @@ Also, this decision was taken to save pointless and possible expensive trips to 
 
 ## How to run locally:
 1. Create a virtual environment:
-   python -m venv venv
-   venv\Scripts\activate
+    -  python -m venv venv
+    -  venv\Scripts\activate
 
 2. Install dependencies:
    pip install -r requirements.txt
