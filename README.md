@@ -52,3 +52,10 @@ Also, this decision was taken to save pointless and possible expensive trips to 
    python manage.py runserver
 
    server will be running on http://127.0.0.1:8000/
+
+## To Do:
+
+![image](https://github.com/user-attachments/assets/6e37e21d-df05-4e66-9585-9a79a95c981b)
+- this model has a visits property for eventual future database cleanup. We can use this field to assess which urls are not accessed or have low hits and clean them up from our database. Either by true deletion of soft deletion, depending on future requirements based on users' behaviours.
+- apply testing to our app
+- create rest of CRUD endpoints
