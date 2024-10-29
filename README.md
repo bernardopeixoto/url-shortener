@@ -26,9 +26,29 @@ Also, this decision was taken to save pointless and possible expensive trips to 
 
 ## Endpoints
 
-1. POST /api/shorten
-   - Request: {"url": "https://example.com/very/very/very/very/very/very/very/very/very/very/long/url"}
-   - Response: {"short_url": "http://localhost:8000/abc123"}
+1. POST /shorten
+   - Request: 
+   {
+    "url": "https://example.com/very/very/very/very/very/very/very/very/very/very/long/url"
+   }
+   - Response: {"short_url": "http://localhost:8000/aBc1234"}
 
 2. GET /{code}
    - Redirects to the original URL
+
+
+## How to run locally:
+1. Create a virtual environment:
+   python -m venv venv
+   venv\Scripts\activate
+
+2. Install dependencies:
+   pip install -r requirements.txt
+
+3. Run migrations:
+   python manage.py migrate
+
+4. Start the development server:
+   python manage.py runserver
+
+   server will be running on http://127.0.0.1:8000/
