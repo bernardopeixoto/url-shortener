@@ -10,7 +10,7 @@ A Django URL shortener API that creates short URLs with a specific signature for
    - DTO Layer: Uses serializers for data transfer and verification (not really a DTO but serializers follow DTO verification logic)
    - Controller Layer: mapped targets for the specified routes / http requests (views)
 
-Above mentioned onion based architecture was chosen due to the separation of responsibilities, modularization of code and distancing controllers/views and business logic/database interactions
+Above mentioned onion based architecture was chosen due to the separation of responsibilities, modularization of code and distancing controllers/views from business logic/database interactions
 
 2. *URL Shortening Logic*:
    - Format: `{base62_encoded_id}{signature}`
@@ -22,7 +22,7 @@ This is important to ensure uniqueness for the urls. Shortened links aren't foll
 Also, this decision was taken to save pointless and possible expensive trips to the database. If a shortened requested link doesn't follow our signature, return an error
 
 3. *Database*:
-   - 
+   - Next step would be implementing connection to a PG DB, using docker images for quick and simple setup
 
 ## Endpoints
 
